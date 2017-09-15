@@ -25,8 +25,9 @@ private slots:
     void on_toolButton_clicked();
 
 private:
-    Ui::Form *ui;
     QString name;
+    Ui::Form *ui;
+
 };
 
 #endif // FORM_H

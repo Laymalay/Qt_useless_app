@@ -19,12 +19,12 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    static int counter = 0;
+
     QString form_name = "";
     bool ok;
     form_name = QInputDialog::getText(this,"input name","",QLineEdit::Normal,"",&ok);
     if (ok){
-        Form *form = new Form(this, QString("%1 %2").arg(counter++).arg(form_name));
+        Form *form = new Form(this, QString("%1").arg(form_name));
         ui->verticalLayout->insertWidget(ui->verticalLayout->indexOf(ui->pushButton),form);
     }
 

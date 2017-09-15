@@ -7,15 +7,18 @@ Form::Form(QWidget *parent, QString name):
     QWidget(parent),
     name(name),
     ui(new Ui::Form)
+
 {
     ui->setupUi(this);
     setLayout(ui->horizontalLayout);
     setFixedHeight(40);
     ui->label_2->setText(name);
+
 }
 
 void Form::setName(const QString name)
 {
+
     this->name = name;
 }
 
@@ -47,4 +50,5 @@ void Form::on_toolButton_clicked()
     new_name = QInputDialog::getText(this,"INPUT NEW NAME", "", QLineEdit::Normal,previous_name,&ok);
     if(ok)
         ui->label_2->setText(new_name);
+        this->setName(new_name);
 }
